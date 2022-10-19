@@ -1,5 +1,6 @@
 # zbx-shelly-template
 Templates to monitor Shelly devices with Zabbix.
+Each subfolder is meant for that specific model/version. If some are missing, it means I don't have that model.
 Prerequisites:
   - A host in Zabbix
     - Add this themplate to the host
