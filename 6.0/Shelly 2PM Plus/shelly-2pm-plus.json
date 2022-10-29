@@ -1,0 +1,2987 @@
+{
+    "zabbix_export": {
+        "version": "6.0",
+        "date": "2022-10-29T13:09:19Z",
+        "groups": [
+            {
+                "uuid": "f609ef9a7ec748ae8ceb88ad929b7613",
+                "name": "Shelly"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "617b5d371ad647e08ba29f1a7cdf950c",
+                "template": "Template Shelly 2PM Plus",
+                "name": "Template Shelly 2PM Plus",
+                "groups": [
+                    {
+                        "name": "Shelly"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "34b7f1e93d0244c099f1e164bf7464a8",
+                        "name": "Switch 1 : Energy Consumption by Minute : -1 minutes (mWh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.by_minute.sw1[0]",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "mWh",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.by_minute[0]"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "815d58b988ff4a3fa3b75c27277ab800",
+                        "name": "Switch 1 : Energy Consumption by Minute : -2 minutes (mWh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.by_minute.sw1[1]",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "mWh",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.by_minute[1]"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "cda85759c0234169ab9521378c43f7de",
+                        "name": "Switch 1 : Energy Consumption by Minute : -3 minutes (mWh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.by_minute.sw1[2]",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "mWh",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.by_minute[2]"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "f4a5b31c25844742a33a2b72f4764216",
+                        "name": "Switch 2 : Energy Consumption by Minute : -1 minutes (mWh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.by_minute.sw2[0]",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "mWh",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.by_minute[0]"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "7c8b8890ec044ccfbbe5b0668fb4a4f6",
+                        "name": "Switch 2 : Energy Consumption by Minute : -2 minutes (mWh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.by_minute.sw2[1]",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "mWh",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.by_minute[1]"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "943f7e5109e54182aa07d81d2a499be0",
+                        "name": "Switch 2 : Energy Consumption by Minute : -3 minutes (mWh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.by_minute.sw2[2]",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "mWh",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.by_minute[2]"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "dd42d9be53f345438de238675884fcd8",
+                        "name": "Switch 1 : Energy Total (Wh) Last Check",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.minute_ts.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "unixtime",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.minute_ts"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "f8524ad84f0a487786288e0035b8a1a3",
+                        "name": "Switch 2 : Energy Total (Wh) Last Check",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.minute_ts.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "unixtime",
+                        "description": "Timestamp of the first second of the last minute",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.minute_ts"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "ad49a6b044fa4922a5a1390d2a6c05cb",
+                        "name": "Switch 1 : Energy Total (Wh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.total.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "Wh",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.total"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "b15a4b4b5c4c4b91bd4cc416264d8739",
+                        "name": "Switch 2 : Energy Total (Wh)",
+                        "type": "DEPENDENT",
+                        "key": "aenergy.total.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "Wh",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.aenergy.total"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "6a77ba067be445f8a8b9da5da0fc3659",
+                        "name": "Switch 1 : Power (W)",
+                        "type": "DEPENDENT",
+                        "key": "apower.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.apower"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "8af89071d35647c5a9d066dec7f8dc17",
+                        "name": "Switch 2 : Power (W)",
+                        "type": "DEPENDENT",
+                        "key": "apower.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.apower"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "eebc689bba3a4834b2cba1942581d290",
+                        "name": "Switch 1 : Auto OFF",
+                        "type": "DEPENDENT",
+                        "key": "auto_off.sw1",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_off"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "e0e3437a8dec4c11b5791ce4ca4326e2",
+                        "name": "Switch 2 : Auto OFF",
+                        "type": "DEPENDENT",
+                        "key": "auto_off.sw2",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_off"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "ed04ed599ebf4a35b0bb2aa06fd06f5d",
+                        "name": "Switch 1 : Auto OFF Delay",
+                        "type": "DEPENDENT",
+                        "key": "auto_off_delay.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "s",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_off_delay"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "5223aeb3191841a59ec4418491df6b12",
+                        "name": "Switch 2 : Auto OFF Delay",
+                        "type": "DEPENDENT",
+                        "key": "auto_off_delay.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "s",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_off_delay"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "40b662ca058f48709adf21b91b40c370",
+                        "name": "Switch 1 : Auto ON",
+                        "type": "DEPENDENT",
+                        "key": "auto_on.sw1",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_on"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "92417231612a47ca8c9ec47281032670",
+                        "name": "Switch 2 : Auto ON",
+                        "type": "DEPENDENT",
+                        "key": "auto_on.sw2",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_on"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "9e81f82c5ac44b5eb46bb0764b6c79b1",
+                        "name": "Switch 1 : Auto ON Delay",
+                        "type": "DEPENDENT",
+                        "key": "auto_on_delay.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "s",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_on_delay"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "559ead83024542929ede6a5ad0cc42ea",
+                        "name": "Switch 2 : Auto ON Delay",
+                        "type": "DEPENDENT",
+                        "key": "auto_on_delay.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "s",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.auto_on_delay"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "874f18d2978f4aa7a774472f08c17909",
+                        "name": "System : Available Updates",
+                        "type": "DEPENDENT",
+                        "key": "available_updates",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.available_updates"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "25001107b5674be2bd75195e8b78b716",
+                        "name": "System : Configuration revision number",
+                        "type": "DEPENDENT",
+                        "key": "cfg_rev",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.cfg_rev"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "8ee6ef3505464d1ca5ba0e621e82fce4",
+                        "name": "Cloud : Connection Status",
+                        "type": "DEPENDENT",
+                        "key": "cloud.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.cloud.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "9606f62020a64a4192399856caa7c6a7",
+                        "name": "Cloud : Connection Server",
+                        "type": "DEPENDENT",
+                        "key": "cloud.server",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.cloud.server"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "54ee754eb11241669e4987ff4b6642b8",
+                        "name": "Switch 1 : Current (A)",
+                        "type": "DEPENDENT",
+                        "key": "current.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "A",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.current"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "aa78c74e2f044a3093dcff12d5853573",
+                        "name": "Switch 2 : Current (A)",
+                        "type": "DEPENDENT",
+                        "key": "current.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "A",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.current"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "5e7c2f0344b54cf0a48d36979cf64441",
+                        "name": "Switch 1 : Current Limit",
+                        "type": "DEPENDENT",
+                        "key": "current_limit.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "A",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.current_limit"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "4e1a515b1e9548a0b48d202fa99a0ee4",
+                        "name": "Switch 2 : Current Limit",
+                        "type": "DEPENDENT",
+                        "key": "current_limit.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "A",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.current_limit"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "67368143af4f4a368f8c2d821465fb5b",
+                        "name": "System : Debug : MQTT",
+                        "type": "DEPENDENT",
+                        "key": "debug.mqtt.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.debug.mqtt.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "f2a6cd34d1d44a8ca90b9e76f039a495",
+                        "name": "System : Debug : UDP",
+                        "type": "DEPENDENT",
+                        "key": "debug.udp.addr",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.debug.udp.addr"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "9b4b7a7ad55e472ea1855cdd190c4c8b",
+                        "name": "System : Debug : Websocket",
+                        "type": "DEPENDENT",
+                        "key": "debug.websocket.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.debug.websocket.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "4b4bfd92c98347a4b51f12122cc70377",
+                        "name": "System : Discoverable",
+                        "type": "DEPENDENT",
+                        "key": "device.discoverable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.device.discoverable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "5e600d547450428ebf81d157e5896aff",
+                        "name": "System : Eco Mode",
+                        "type": "DEPENDENT",
+                        "key": "device.eco_mode",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.device.eco_mode"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "5c63e566e6fd4ba7baefa1353463ef93",
+                        "name": "System : File System Free",
+                        "type": "DEPENDENT",
+                        "key": "fs_free",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "B",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.fs_free"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "ce03544d9d2a41d2b028c0e8d700f852",
+                        "name": "System : File System Size",
+                        "type": "DEPENDENT",
+                        "key": "fs_size",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "B",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.fs_size"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "1630f0bc042a43db93ea40fd8355a19e",
+                        "name": "Firmware Id",
+                        "type": "DEPENDENT",
+                        "key": "fw_id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.fw_id"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]"
+                        }
+                    },
+                    {
+                        "uuid": "828455309ffc4da0b3aafddeb686e77e",
+                        "name": "Device : Get Config",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Shelly.GetConfig",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "0edb953f80e94dddbe72216aa54b8670",
+                        "name": "Device : Get Info",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "bffe8e1eae92484cb46efdcf63b83364",
+                        "name": "Device : Get Status",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetStatus]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Shelly.GetStatus",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "4748dcc92ea94a6898f49cfe089e2f54",
+                        "name": "Switch 1 : Get Config",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "0abac0db6f2649b58f6ac8f5b3d9bd20",
+                        "name": "Switch 2 : Get Config",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "c7dfe2dc120f4ffcabbc80e8f282683d",
+                        "name": "Switch 1 : Get Status",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "f8bf1fc35440425e8a821af1734c9d8b",
+                        "name": "Switch 2 : Get Status",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "4fdf1cb99d994e5dac8bcb792dd5eaa3",
+                        "name": "System : Get Config",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Sys.GetConfig",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "48972190883645a38dda8587546dd465",
+                        "name": "System : Get Status",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/rpc/Sys.GetStatus",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "49eb80f41d834f18a77766b0ac0ab8a9",
+                        "name": "Id",
+                        "type": "DEPENDENT",
+                        "key": "id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.id"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]"
+                        }
+                    },
+                    {
+                        "uuid": "1b61256a6389409daf677db84239e47a",
+                        "name": "Switch 1 : Initial State",
+                        "type": "DEPENDENT",
+                        "key": "initial_state.sw1",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.initial_state"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "94a22fd7bfe44621ab136b7f4b46966e",
+                        "name": "Switch 2 : Initial State",
+                        "type": "DEPENDENT",
+                        "key": "initial_state.sw2",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.initial_state"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "18438b3451cb4dbcb4c0cd7a3a8edf04",
+                        "name": "System : KVS (Key-Value Store) revision number",
+                        "type": "DEPENDENT",
+                        "key": "kvs_rev",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.kvs_rev"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "98171ac0afbd42b28b6700254224629f",
+                        "name": "System : Lattitude",
+                        "type": "DEPENDENT",
+                        "key": "location.lat",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.location.lat"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "3222fdb055e14d9e9ea56dce376259f0",
+                        "name": "System : Longitude",
+                        "type": "DEPENDENT",
+                        "key": "location.lon",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.location.lon"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "8cc1cf53691242bb81e1c705ce1524ce",
+                        "name": "System : Timezone",
+                        "type": "DEPENDENT",
+                        "key": "location.tz",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.location.tz"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "b393cc83d9e04c51aed7f5bc871a71c6",
+                        "name": "MAC Address",
+                        "type": "DEPENDENT",
+                        "key": "mac",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mac"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]"
+                        }
+                    },
+                    {
+                        "uuid": "c9d5c18aaa1f466dbdc9ac6fb0538265",
+                        "name": "Model",
+                        "type": "DEPENDENT",
+                        "key": "model",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.model"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]"
+                        }
+                    },
+                    {
+                        "uuid": "a9b7780755894caa9202732309465342",
+                        "name": "MQTT : Client Id",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.client_id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.client_id"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "499ec75ec2ab4422a04847c8ad0ff0cc",
+                        "name": "MQTT : Connection Status",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "dd969cbe4ec040a38be8aba20feb1a3a",
+                        "name": "MQTT : RPC Notification",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.rpc_ntf",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.rpc_ntf"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "65364ed9ad4541f3a4501328a4c16016",
+                        "name": "MQTT : Connection Server",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.server",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.server"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "b1498db787104039a73b9d77abbf53b9",
+                        "name": "MQTT : Status Notification",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.status_ntf",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.status_ntf"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "083c4bea20d140f6b672e7b952deedec",
+                        "name": "MQTT : Topic Prefix",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.topic_prefix",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.topic_prefix"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "f45c6ae01e3048e1ad103a97da7b7710",
+                        "name": "MQTT : User",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.user",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.user"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "3ee7680d89804f0697df3e3a8d5dfdb5",
+                        "name": "Device Name",
+                        "type": "DEPENDENT",
+                        "key": "name",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.name"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]"
+                        }
+                    },
+                    {
+                        "uuid": "0a6b081fe98a4c7799a43601129af36b",
+                        "name": "Switch 1 : Output status",
+                        "type": "DEPENDENT",
+                        "key": "output.sw1",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.output"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "511960cef9334545a8c0e3cdb0dd2be9",
+                        "name": "Switch 2 : Output status",
+                        "type": "DEPENDENT",
+                        "key": "output.sw2",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.output"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "a5123e916e8141fb916ad76f0bb75261",
+                        "name": "Switch 1 : Power Factor (W)",
+                        "type": "DEPENDENT",
+                        "key": "pf.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.pf"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "0e56384ca7004fe3ad536b256045d876",
+                        "name": "Switch 2 : Power Factor (W)",
+                        "type": "DEPENDENT",
+                        "key": "pf.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.pf"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "10da0679334b4924a3564fcc46c21a93",
+                        "name": "Switch 1 : Power Limit",
+                        "type": "DEPENDENT",
+                        "key": "power_limit.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.power_limit"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "f075dcac5d254773b8475ee03f94ef44",
+                        "name": "Switch 2 : Power Limit",
+                        "type": "DEPENDENT",
+                        "key": "power_limit.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "W",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.power_limit"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "80707e37a92f45269e7b01d3ce9ab09c",
+                        "name": "System : RAM Free",
+                        "type": "DEPENDENT",
+                        "key": "ram_free",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "B",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ram_free"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "55b8df429cc643c38417b3d816971924",
+                        "name": "System : RAM Size",
+                        "type": "DEPENDENT",
+                        "key": "ram_size",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "B",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ram_size"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "3c467a2d59444dbdbaeb6f78aa6c91dd",
+                        "name": "System : Restart Required",
+                        "type": "DEPENDENT",
+                        "key": "restart_required",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.restart_required"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "669e0c5c30644e6dadd276087a12035f",
+                        "name": "System : Schedules revision number",
+                        "type": "DEPENDENT",
+                        "key": "schedule_rev",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.schedule_rev"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "cd84596b5acf456e9b4f8d74b1b944c7",
+                        "name": "System : SNTP",
+                        "type": "DEPENDENT",
+                        "key": "sntp.server",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.sntp.server"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "c514b5efbc3e44a3bed8165c206bfd40",
+                        "name": "Switch 1 : Temperature (C)",
+                        "type": "DEPENDENT",
+                        "key": "temperature.tC.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0C",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.temperature.tC"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "1c650cea9cbc49e890609b588d997a7f",
+                        "name": "Switch 2 : Temperature (C)",
+                        "type": "DEPENDENT",
+                        "key": "temperature.tC.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0C",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.temperature.tC"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "bafbeb8172064b87860614bf1cdcfe8c",
+                        "name": "Switch 1 : Temperature (F)",
+                        "type": "DEPENDENT",
+                        "key": "temperature.tF.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.temperature.tF"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "c8da289346db4d7f86932be5e2e1a7ae",
+                        "name": "Switch 2 : Temperature (F)",
+                        "type": "DEPENDENT",
+                        "key": "temperature.tF.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "\u00b0F",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.temperature.tF"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "c22684f8c9c94aa09f22f455a5e59d35",
+                        "name": "System : Time",
+                        "type": "DEPENDENT",
+                        "key": "time",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.time"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "a171a6e0d4524cf49a2a4babe54e17b7",
+                        "name": "System : Unixtime",
+                        "type": "DEPENDENT",
+                        "key": "unixtime",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "unixtime",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.unixtime"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "7db048be5a5b4db58c09c12d6796bfea",
+                        "name": "System : Uptime",
+                        "type": "DEPENDENT",
+                        "key": "uptime",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "uptime",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.uptime"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "e9cb82f74f204c22bd3b5475cd0f0542",
+                        "name": "Firmware Version",
+                        "type": "DEPENDENT",
+                        "key": "ver",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ver"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetDeviceInfo]"
+                        }
+                    },
+                    {
+                        "uuid": "2e60891ff7934413874e9600942ec667",
+                        "name": "Switch 1 : Voltage (V)",
+                        "type": "DEPENDENT",
+                        "key": "voltage.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.voltage"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "14159acae09f4dd5a42bfd25530cbabb",
+                        "name": "Switch 2 : Voltage (V)",
+                        "type": "DEPENDENT",
+                        "key": "voltage.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.voltage"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetStatus?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "fedf638d2f6c4b368f512dc114de1a58",
+                        "name": "Switch 1 : Voltage Limit",
+                        "type": "DEPENDENT",
+                        "key": "voltage_limit.sw1",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.voltage_limit"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=0]"
+                        }
+                    },
+                    {
+                        "uuid": "ca19bea6914c402794d1385124611562",
+                        "name": "Switch 2 : Voltage Limit",
+                        "type": "DEPENDENT",
+                        "key": "voltage_limit.sw2",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "V",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.voltage_limit"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Switch.GetConfig?id=1]"
+                        }
+                    },
+                    {
+                        "uuid": "3d1d8f8fad194507a5428bc8c57ec2a5",
+                        "name": "System : Webhooks revision number",
+                        "type": "DEPENDENT",
+                        "key": "webhook_rev",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.webhook_rev"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Sys.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "f90de9555d8e4060bbf97bb9ccdcec26",
+                        "name": "WiFi : Access Point : Is Enabled",
+                        "type": "DEPENDENT",
+                        "key": "wifi.ap.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.ap.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "96b766fd7c244ea29ee81b146936ed7e",
+                        "name": "WiFi : Access Point : Is Open",
+                        "type": "DEPENDENT",
+                        "key": "wifi.ap.is_open",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.ap.is_open"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "06fca3c9653b4b0287e7b57af8df9d96",
+                        "name": "WiFi : Access Point : Is Range Extender",
+                        "type": "DEPENDENT",
+                        "key": "wifi.ap.range_extender.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.ap.range_extender.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "e213ff1569bb4ed38bde121e5985e92d",
+                        "name": "WiFi : Access Point : SSID",
+                        "type": "DEPENDENT",
+                        "key": "wifi.ap.ssid",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.ap.ssid"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "a1b07ac88dd14fc1b4ab369db02c9d80",
+                        "name": "WiFi : RSSI Level",
+                        "type": "DEPENDENT",
+                        "key": "wifi.rssi",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.rssi"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetStatus]"
+                        }
+                    },
+                    {
+                        "uuid": "8b5d04d95fdf4660a5ff51471db5e75d",
+                        "name": "WiFi : Primary : Is Enabled",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "7e9af1dae4754f99aff1b170bfc68cc9",
+                        "name": "WiFi : Primary : Gateway",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.gw",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.gw"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "3648ca54ce5242d690cd04f6136f234d",
+                        "name": "WiFi : Primary : IP Address",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.ip",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.ip"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "33696c992a314c81abd13847304e064a",
+                        "name": "WiFi : Primary : IPv4 Mode",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.ipv4mode",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.ipv4mode"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "43d1472ebc0a41e991dcca64836cf75f",
+                        "name": "WiFi : Primary : Is Open",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.is_open",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.is_open"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "13ef2229caba49b09159a586f354bdd5",
+                        "name": "WiFi : Primary : Nameserver",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.nameserver",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.nameserver"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "ec3473fff77645d5ba83b26150d20325",
+                        "name": "WiFi : Primary : Network Mask",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.netmask",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.netmask"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "01d5c41cce8f4719936cba1120739717",
+                        "name": "WiFi : Primary : SSID",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta.ssid",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta.ssid"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "ccb4693ebfe2479f9dd52f2305e3aecd",
+                        "name": "WiFi : Secondary : Is Enabled",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.enable"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "97447323242c47468c2a2c08b4880a93",
+                        "name": "WiFi : Secondary : Gateway",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.gw",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.gw"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "2597e7e5da0a4679b071fae84a2824cb",
+                        "name": "WiFi : Secondary : IP Address",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.ip",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.ip"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "f0a5c788f2cf4726a81aeba6866570c2",
+                        "name": "WiFi : Secondary : IPv4 Mode",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.ipv4mode",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.ipv4mode"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "6f42e7b8e6be40a68314ef1d2639b0ab",
+                        "name": "WiFi : Secondary : Is Open",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.is_open",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.is_open"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "3ebb537f4e8c45b583d9a4b56903b49b",
+                        "name": "WiFi : Secondary : Nameserver",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.nameserver",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.nameserver"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "ce16101bc3694c5c949be04ee010b1e6",
+                        "name": "WiFi : Secondary : Network Mask",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.netmask",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.netmask"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "5c6b5107b6d9494e88652adca25db311",
+                        "name": "WiFi : Secondary : SSID",
+                        "type": "DEPENDENT",
+                        "key": "wifi.sta1.ssid",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.sta1.ssid"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetConfig]"
+                        }
+                    },
+                    {
+                        "uuid": "8a8f89e113a543148e9482b58d2a0fe0",
+                        "name": "WiFi : Connetion Status",
+                        "type": "DEPENDENT",
+                        "key": "wifi.status",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi.status"
+                                ]
+                            },
+                            {
+                                "type": "TRIM",
+                                "parameters": [
+                                    "[]"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/rpc/Shelly.GetStatus]"
+                        }
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$SHELLY_HOST}",
+                        "description": "Host IP or DNS"
+                    },
+                    {
+                        "macro": "{$SHELLY_PASS}",
+                        "description": "Device password, if configured"
+                    },
+                    {
+                        "macro": "{$SHELLY_USER}",
+                        "description": "Device user, if configured"
+                    }
+                ]
+            }
+        ],
+        "graphs": [
+            {
+                "uuid": "b85b246549aa4ff7bfa06dba4b599c4d",
+                "name": "Switch : Current (A)",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "current.sw1"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "current.sw2"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "a8982f8241d24026a0fdbb2af1200e40",
+                "name": "Switch : Energy Total (Wh)",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "aenergy.total.sw1"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "aenergy.total.sw2"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "cc6f9abec75747f08ef7ca1cd510e2f7",
+                "name": "Switch : Power (W)",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "apower.sw1"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "apower.sw2"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "51952fdf563f4577b202fdc6175cb7bf",
+                "name": "Switch : Temperature (C)",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "temperature.tC.sw1"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "temperature.tC.sw2"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "55e9d3044ba6428ca80f2112fc57ccb5",
+                "name": "Switch : Temperature (F)",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "temperature.tF.sw2"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "temperature.tF.sw2"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "4dddc715c8ed4df48b38df8c0b0471c8",
+                "name": "Switch : Voltage (V)",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "voltage.sw1"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "voltage.sw2"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "f8354d04e6624aa391bbb9c5a8e6ad92",
+                "name": "System : RAM & File system Free",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "ram_free"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "fs_free"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "a1a2cf4ba450425b9ea14b0bcd9ef479",
+                "name": "WiFi : RSSI Level",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 2PM Plus",
+                            "key": "wifi.rssi"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
