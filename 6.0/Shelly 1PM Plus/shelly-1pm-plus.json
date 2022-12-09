@@ -415,7 +415,7 @@
                     },
                     {
                         "uuid": "7b501235f77c4d26a1ba70a6e2b05c09",
-                        "name": "Switch 1 : Voltage Limit",
+                        "name": "Switch 1 : Current Limit",
                         "type": "DEPENDENT",
                         "key": "current_limit",
                         "delay": "0",
