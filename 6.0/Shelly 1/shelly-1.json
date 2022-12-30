@@ -1,0 +1,1763 @@
+{
+    "zabbix_export": {
+        "version": "6.2",
+        "date": "2022-12-30T14:13:06Z",
+        "template_groups": [
+            {
+                "uuid": "f609ef9a7ec748ae8ceb88ad929b7613",
+                "name": "Shelly"
+            }
+        ],
+        "templates": [
+            {
+                "uuid": "4695fb76b6fc4fb0a17ec1fe6854172b",
+                "template": "Template Shelly 1",
+                "name": "Template Shelly 1",
+                "groups": [
+                    {
+                        "name": "Shelly"
+                    }
+                ],
+                "items": [
+                    {
+                        "uuid": "e1db53be8ff64c408cebb7c1242007c2",
+                        "name": "Actions : Active",
+                        "type": "DEPENDENT",
+                        "key": "actions.active",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.actions.active"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "eab1a390e8e74c689c0aa633b55bbe68",
+                        "name": "Actions : Names",
+                        "type": "DEPENDENT",
+                        "key": "actions.names",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.actions.names"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "b634a0bc7a42403481d7461bffbc2fa1",
+                        "name": "Device : Allow CORS",
+                        "type": "DEPENDENT",
+                        "key": "allow_cross_origin",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.allow_cross_origin"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "85508f9513694348926649b12301efbd",
+                        "name": "Device : Build Info : ID",
+                        "type": "DEPENDENT",
+                        "key": "build_info.build_id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.build_info.build_id"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "c215e3f42ba24b79b748aad28ca5fd2c",
+                        "name": "Device : Build Info : Timestamp",
+                        "type": "DEPENDENT",
+                        "key": "build_info.build_timestamp",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.build_info.build_timestamp"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "cf84224be61a47459eab50392b44bbd8",
+                        "name": "Device : Build Info : Version",
+                        "type": "DEPENDENT",
+                        "key": "build_info.build_version",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.build_info.build_version"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "1e4667804dee4374b8e34aeead776fd9",
+                        "name": "Cloud : Connected",
+                        "type": "DEPENDENT",
+                        "key": "cloud.connected",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.cloud.connected"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "bfce2b0b2cb9446ea3465ca607d5999e",
+                        "name": "Cloud : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "cloud.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.cloud.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "3944a18d2fc44060b66f444882cc90bf",
+                        "name": "CoIoT : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "coiot.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.coiot.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "4e8c918670f8408d8561c330bb1d3c99",
+                        "name": "CoIoT : Peer",
+                        "type": "DEPENDENT",
+                        "key": "coiot.peer",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.coiot.peer"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "7ddedbea4fa54f6981ed4b1e3b9756dd",
+                        "name": "CoIoT : Update period",
+                        "type": "DEPENDENT",
+                        "key": "coiot.update_period",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.coiot.update_period"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "87d7a6bd22a944eaa893d6ddddffd9c7",
+                        "name": "Device : Debug enabled",
+                        "type": "DEPENDENT",
+                        "key": "debug_enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.debug_enable"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "11062c9e1bd84fa8878aeb3c8b1333bf",
+                        "name": "Device : Hostname",
+                        "type": "DEPENDENT",
+                        "key": "device.hostname",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.device.hostname"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "1c37ebfb673f4334b21e9ab62028c589",
+                        "name": "Device : MAC Address",
+                        "type": "DEPENDENT",
+                        "key": "device.mac",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.device.mac"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "481e7a39669e44229da12507e49cfc81",
+                        "name": "Device : Number of outputs",
+                        "type": "DEPENDENT",
+                        "key": "device.num_outputs",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.device.num_outputs"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "acd7fe41433f4417aa76341b15cf5784",
+                        "name": "Device : Discoverable",
+                        "type": "DEPENDENT",
+                        "key": "discoverable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.discoverable"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "7394bc313baa4c45864919d98eb14095",
+                        "name": "Device : External switch enabled",
+                        "type": "DEPENDENT",
+                        "key": "ext_switch_enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ext_switch_enable"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "7b047f509320464789b97eae5000b70d",
+                        "name": "Device : External switch reversed",
+                        "type": "DEPENDENT",
+                        "key": "ext_switch_reverse",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ext_switch_reverse"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "c36f78509ff644fc9f410288cc231c8e",
+                        "name": "Device : Factory reset from switch",
+                        "type": "DEPENDENT",
+                        "key": "factory_reset_from_switch",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.factory_reset_from_switch"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "fbb23f0042c74bf7931795548a908cad",
+                        "name": "File System : Free",
+                        "type": "DEPENDENT",
+                        "key": "fs_free",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.fs_free"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/status]"
+                        }
+                    },
+                    {
+                        "uuid": "a62f837609004aaf874421ba25f7916c",
+                        "name": "File System : Total",
+                        "type": "DEPENDENT",
+                        "key": "fs_size",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.fs_size"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/status]"
+                        }
+                    },
+                    {
+                        "uuid": "ea48bfc3ea194592b5a840fe98a4be8a",
+                        "name": "Device : Firmware",
+                        "type": "DEPENDENT",
+                        "key": "fw",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.fw"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "552cbc39ca444ecc8eca33c6d5ce79e6",
+                        "name": "Relay",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/relay/0]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/relay/0",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "293b031ce7314484aeecb1fdcbe3eeef",
+                        "name": "Settings",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/settings]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/settings",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "fce5a189e0d74cebbb1d7cdcc84f72a7",
+                        "name": "Status",
+                        "type": "HTTP_AGENT",
+                        "key": "http.get[{$SHELLY_HOST}/status]",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "authtype": "BASIC",
+                        "username": "{$SHELLY_USER}",
+                        "password": "{$SHELLY_PASS}",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.body"
+                                ]
+                            }
+                        ],
+                        "url": "http://{$SHELLY_HOST}/status",
+                        "output_format": "JSON"
+                    },
+                    {
+                        "uuid": "1d963db413c546e7aa3bc9d091fe258f",
+                        "name": "Hardware : Batch ID",
+                        "type": "DEPENDENT",
+                        "key": "hwinfo.batch_id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.hwinfo.batch_id"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "4fa5842a1b2545f68e19c0bd51a9ed67",
+                        "name": "Hardware : Revision",
+                        "type": "DEPENDENT",
+                        "key": "hwinfo.hw_revision",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.hwinfo.hw_revision"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "5e2482de9dca412a9056d66292452930",
+                        "name": "Device : Latitude",
+                        "type": "DEPENDENT",
+                        "key": "lat",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.lat"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "8897f4b7c661404f8f61607812a7ef76",
+                        "name": "Device : Longitude",
+                        "type": "DEPENDENT",
+                        "key": "lng",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.lng"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "d20bd84ba1cb441d9b7e1f7d22ddc296",
+                        "name": "Login : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "login.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.login.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "f3344e269bad46b58d7d014625dd9c80",
+                        "name": "Login : Unprotected",
+                        "type": "DEPENDENT",
+                        "key": "login.unprotected",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.login.unprotected"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "e95b928a81ed43eeb67b198fee683306",
+                        "name": "Login : Username",
+                        "type": "DEPENDENT",
+                        "key": "login.username",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.login.username"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "67a46b32b9f942c7919538cf75293ff8",
+                        "name": "Device : Long  push time",
+                        "type": "DEPENDENT",
+                        "key": "longpush_time",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "ms",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.longpush_time"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "f6a2ec19f588456080639ab0d1395e8e",
+                        "name": "Device : Mode",
+                        "type": "DEPENDENT",
+                        "key": "mode",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mode"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "de50dff2412f4415aa5351c02cc4e413",
+                        "name": "MQTT : Clean session",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.clean_session",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.clean_session"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "d52d2fb1f1a5422886b457e064546a1c",
+                        "name": "MQTT : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.enable",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.enable"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "1ab7944a9819413494ab0873b816005d",
+                        "name": "MQTT : ID",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.id",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.id"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "761fd3c7bf2b4277b35c02a7f7efa058",
+                        "name": "MQTT : Keep alive",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.keep_alive",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.keep_alive"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "88e1cf22969147319948e5a3f91683eb",
+                        "name": "MQTT : Max QoS",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.max_qos",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.max_qos"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "678531904f9a46d48a1392c88a699509",
+                        "name": "MQTT : Max reconnect timeout",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.reconnect_timeout_max",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.reconnect_timeout_max"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "d78586c00a564cbe848791917c3c3d14",
+                        "name": "MQTT : Min reconnect timeout",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.reconnect_timeout_min",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.reconnect_timeout_min"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "705ca30f9c3547e88b506efa2f2d43db",
+                        "name": "MQTT : Retain",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.retain",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.retain"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "be86102c5cad4beaae4f00518c49b694",
+                        "name": "MQTT : Server",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.server",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.server"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "99f9fe7458f2467da21e2d5c9979f619",
+                        "name": "MQTT : Update period",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.update_period",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.update_period"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "25ed923a29b44733b4821fef3b291ad7",
+                        "name": "MQTT : User",
+                        "type": "DEPENDENT",
+                        "key": "mqtt.user",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.mqtt.user"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "3f34c7f1c5dc4974992247322ce7b07a",
+                        "name": "Device : Name",
+                        "type": "DEPENDENT",
+                        "key": "name",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.name"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "db7d47ef201a40c3ac27fb7a4cc50cff",
+                        "name": "Device : PIN Code",
+                        "type": "DEPENDENT",
+                        "key": "pin_code",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.pin_code"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "2e072811dc844ea8a30cf2083d4a780c",
+                        "name": "Memory : Free",
+                        "type": "DEPENDENT",
+                        "key": "ram_free",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ram_free"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/status]"
+                        }
+                    },
+                    {
+                        "uuid": "1a911d89bd174cf4a753015030c14fab",
+                        "name": "Memory : Total",
+                        "type": "DEPENDENT",
+                        "key": "ram_total",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ram_total"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/status]"
+                        }
+                    },
+                    {
+                        "uuid": "27af1cc56e05406cb1de515743d9cbfd",
+                        "name": "Relay : Has timer",
+                        "type": "DEPENDENT",
+                        "key": "relay.has_timer",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.has_timer"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/relay/0]"
+                        }
+                    },
+                    {
+                        "uuid": "d7067022051248db8808d0b2e3911854",
+                        "name": "Relay : Is on",
+                        "type": "DEPENDENT",
+                        "key": "relay.ison",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.ison"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/relay/0]"
+                        }
+                    },
+                    {
+                        "uuid": "807afef3bd2c4b688f9a6ac3e5a6fe1f",
+                        "name": "Relay : Source",
+                        "type": "DEPENDENT",
+                        "key": "relay.source",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.source"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/relay/0]"
+                        }
+                    },
+                    {
+                        "uuid": "d572108151e54531836d87a3eae0532e",
+                        "name": "Relay : Timer duration",
+                        "type": "DEPENDENT",
+                        "key": "relay.timer_duration",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.timer_duration"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/relay/0]"
+                        }
+                    },
+                    {
+                        "uuid": "aa1038a35cda470c8dc2c6923b658156",
+                        "name": "Relay : Timer remaining",
+                        "type": "DEPENDENT",
+                        "key": "relay.timer_remaining",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.timer_remaining"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/relay/0]"
+                        }
+                    },
+                    {
+                        "uuid": "6b12c7f038674191a542e9a60da52501",
+                        "name": "Relay : Timer started",
+                        "type": "DEPENDENT",
+                        "key": "relay.timer_started",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.timer_started"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/relay/0]"
+                        }
+                    },
+                    {
+                        "uuid": "b80f2ef678c946a8a4c6e48eaefd4ede",
+                        "name": "SNTP : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "sntp.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.sntp.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "b099abdce4fa4a0089222ad6da7c1f7a",
+                        "name": "SNTP : Server",
+                        "type": "DEPENDENT",
+                        "key": "sntp.server",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.sntp.server"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "94259740a2864950b2e77a89f7c9937b",
+                        "name": "Device : Time",
+                        "type": "DEPENDENT",
+                        "key": "time",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.time"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "bb74949400f643548f1fb57f4def6972",
+                        "name": "Device : Timezone",
+                        "type": "DEPENDENT",
+                        "key": "timezone",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.timezone"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "9d58e9ac34d046578c0a8e03f6e1a4b4",
+                        "name": "Device : Timezone autodetected",
+                        "type": "DEPENDENT",
+                        "key": "tzautodetect",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.tzautodetect"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "857e743155554de0a7d8e7dd272fd785",
+                        "name": "Device : Timezone DST manual",
+                        "type": "DEPENDENT",
+                        "key": "tz_dst",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.tz_dst"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "0face1cf578a4ae19722cef68ec5caa4",
+                        "name": "Device : Timezone DST automatic",
+                        "type": "DEPENDENT",
+                        "key": "tz_dst_auto",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.tz_dst_auto"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "fbb4637cb61b469fabea846b338728d4",
+                        "name": "Device : Timezone offset (sec)",
+                        "type": "DEPENDENT",
+                        "key": "tz_utc_offset",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.tz_utc_offset"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "c84e36e303624318b39bc0a3c498df62",
+                        "name": "Device : Unixtime",
+                        "type": "DEPENDENT",
+                        "key": "unixtime",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "unixtime",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.unixtime"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "022614b4ee344e3888aa22121bb0f5f1",
+                        "name": "Device : Uptime",
+                        "type": "DEPENDENT",
+                        "key": "uptime",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "units": "uptime",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.uptime"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/status]"
+                        }
+                    },
+                    {
+                        "uuid": "bc9ce15d39b54902bcc9cc093f4ec4e9",
+                        "name": "WiFi : Access Point enabled",
+                        "type": "DEPENDENT",
+                        "key": "wifi_ap.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_ap.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "593b8b0c41e642fa82db39d43a3d569b",
+                        "name": "WiFi : Access Point key",
+                        "type": "DEPENDENT",
+                        "key": "wifi_ap.key",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_ap.key"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "1801e7e425024069a1b99b70faee041b",
+                        "name": "WiFi : Access Point SSID",
+                        "type": "DEPENDENT",
+                        "key": "wifi_ap.ssid",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_ap.ssid"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "0a7eadbe9a544ac4b7d79a81b9ce7dc3",
+                        "name": "WiFi : Primary : DNS",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.dns",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.dns"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "04d72a9a39c741d8a1030061d8f53276",
+                        "name": "WiFi : Primary : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "953ac1b1d4b442d08e5837192fec7691",
+                        "name": "WiFi : Primary : Gateway",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.gw",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.gw"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "5bde9c2b0d4b442bbe554d20320653a5",
+                        "name": "WiFi : Primary : IP Address",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.ip",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.ip"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "ad521d47d90a4088bc4e62b939eaacb9",
+                        "name": "WiFi : Primary : IPv4 method",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.ipv4_method",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.ipv4_method"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "b90300a3bb3d4a569c77a80038e55a78",
+                        "name": "WiFi : Primary : Subnet mask",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.mask",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.mask"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "432ae4868fba4fee971264d5b7c1960f",
+                        "name": "WiFi : RSSI Level",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.rssi",
+                        "delay": "0",
+                        "value_type": "FLOAT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.rssi"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/status]"
+                        }
+                    },
+                    {
+                        "uuid": "c814a2e035e545c7b744595505f0e0b5",
+                        "name": "WiFi : Primary : SSID",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta.ssid",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta.ssid"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "725f4da36aae4bb9b2dd200faef4f806",
+                        "name": "WiFi : Secondary : DNS",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.dns",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.dns"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "d13e5ddc9cd0418ab242d74f25c7bf14",
+                        "name": "WiFi : Secondary : Enabled",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.enabled",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.enabled"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "93b5a6b9c6c948c0811bd1742abfe763",
+                        "name": "WiFi : Secondary : Gateway",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.gw",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.gw"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "c7ee46b336054f3bb58a147e547db624",
+                        "name": "WiFi : Secondary : IP Address",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.ip",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.ip"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "89655aaa577e416080c636457a7731c6",
+                        "name": "WiFi : Secondary  : IPv4 method",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.ipv4_method",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.ipv4_method"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "42736f0c888e4dcdb5865a85d70d1456",
+                        "name": "WiFi : Secondary : Subnet mask",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.mask",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.mask"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    },
+                    {
+                        "uuid": "eef91b4bdae24ac2b9c150d3fe0f0c5c",
+                        "name": "WiFi : Secondary : SSID",
+                        "type": "DEPENDENT",
+                        "key": "wifi_sta1.ssid",
+                        "delay": "0",
+                        "trends": "0",
+                        "value_type": "TEXT",
+                        "preprocessing": [
+                            {
+                                "type": "JSONPATH",
+                                "parameters": [
+                                    "$.wifi_sta1.ssid"
+                                ]
+                            }
+                        ],
+                        "master_item": {
+                            "key": "http.get[{$SHELLY_HOST}/settings]"
+                        }
+                    }
+                ],
+                "macros": [
+                    {
+                        "macro": "{$SHELLY_HOST}"
+                    },
+                    {
+                        "macro": "{$SHELLY_PASS}"
+                    },
+                    {
+                        "macro": "{$SHELLY_USER}"
+                    }
+                ]
+            }
+        ],
+        "graphs": [
+            {
+                "uuid": "31d4acc41aa84a1c999dccc0c7dee364",
+                "name": "Device : Uptime",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 1",
+                            "key": "uptime"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "32f06dad8d114841b08e30ac1c20876e",
+                "name": "File System",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 1",
+                            "key": "fs_free"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 1",
+                            "key": "fs_size"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "3d2ae0143b5343aaba24126025f7eb1c",
+                "name": "Memory",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 1",
+                            "key": "ram_free"
+                        }
+                    },
+                    {
+                        "sortorder": "1",
+                        "color": "F63100",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 1",
+                            "key": "ram_total"
+                        }
+                    }
+                ]
+            },
+            {
+                "uuid": "732ce15c1d33434c8acfb6e9ed0337a2",
+                "name": "WiFi : RSSI Level",
+                "graph_items": [
+                    {
+                        "color": "199C0D",
+                        "calc_fnc": "ALL",
+                        "item": {
+                            "host": "Template Shelly 1",
+                            "key": "wifi_sta.rssi"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
